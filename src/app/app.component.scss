@@ -1,0 +1,13 @@
+.app-component-scss{  
+  .main-menu{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+
+    .p-menubar{
+      width: fit-content;
+      background: #fff;
+      border-bottom: 1px solid red;
+    }
+  }
+}

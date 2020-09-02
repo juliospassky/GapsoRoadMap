@@ -1,0 +1,19 @@
+<div class="main-menu">
+    <p-menubar [model]="items">
+        <div>
+            <p-button type="text" (click)="display = true" icon="pi pi-plus" label="Show"></p-button>
+            <span class="p-input-icon-left p-float-label">
+                <i class="pi pi-search"></i>
+                <input type="text" id="input-search" pInputText [(ngModel)]="inputSearch">    
+                <label for="input-search" for="float-input">Search</label>     
+            </span>
+            <button type="button" pButton label="Logout" icon="pi pi-power-off" style="margin-left:.25em"></button>
+        </div>
+    </p-menubar>
+</div>
+
+<p-sidebar [(visible)]="display">
+    Content
+</p-sidebar>
+
+<router-outlet></router-outlet>
