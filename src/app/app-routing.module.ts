@@ -6,15 +6,15 @@ import { RoadMapComponent } from './road-map/road-map.component';
 
 const routes: Routes = [
   {
-    path: 'roadMap/:id',
+    path: 'roadmap/:id',
     component: RoadMapComponent
   },
   {
-    path: '**',
+    path: '',
     component: MainPageComponent
   },
   {
-    path: '',
+    path: '**',
     component: PageNotFoundComponent
   },
 ];
