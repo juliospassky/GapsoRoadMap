@@ -44,14 +44,14 @@ export class AppComponent implements OnInit {
     ];
     this.menuSideBar = [
       { label:'T. I.', icon:'pi pi-fw pi-desktop', items:[
-        { label: 'Front-end', routerLink: '/roadMap/frontend', command: () => { this.setDisplaySideBar(); } },
-        { label: 'Back-end', routerLink: '/roadMap/backend', command: () => { this.setDisplaySideBar(); } },
-        { label: 'DevOps', routerLink: '/roadMap/devops', command: () => { this.setDisplaySideBar(); } }
+        { label: 'Front-end', routerLink: '/roadmap/frontend', command: () => { this.setDisplaySideBar(); } },
+        { label: 'Back-end', routerLink: '/roadmap/backend', command: () => { this.setDisplaySideBar(); } },
+        { label: 'DevOps', routerLink: '/roadmap/devops', command: () => { this.setDisplaySideBar(); } }
       ]},
       { separator: true },
-      { label:'Optimization', icon:'pi pi-fw pi-globe', routerLink: '/roadMap/optimization', command: () => { this.setDisplaySideBar(); } },
+      { label:'Optimization', icon:'pi pi-fw pi-globe', routerLink: '/roadmap/optimization', command: () => { this.setDisplaySideBar(); } },
       { separator: true },
-      { label:'Data Science', icon:'pi pi-fw pi-cog', routerLink: '/roadMap/datascience', command: () => { this.setDisplaySideBar(); } }
+      { label:'Data Science', icon:'pi pi-fw pi-cog', routerLink: '/roadmap/datascience', command: () => { this.setDisplaySideBar(); } }
     ];
   }
 

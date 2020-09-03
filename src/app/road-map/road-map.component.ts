@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -11,12 +11,13 @@ export class RoadMapComponent implements OnInit {
   id: string;
   paramsSubscription: Subscription
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private router: Router, private route: ActivatedRoute) {
     this.paramsSubscription = this.route.params.subscribe(params => {
-      this.id = params['id'];
+      if(params['id'] === 'frontend' || params['id'] === 'backend' || params['id'] === 'devops' || params['id'] === 'optimization' || params['id'] === 'datascience')
+        this.id = params['id'];
+      else
+        this.router.navigate(['/404'])
     })
-    
-    console.log('caminho: ', this.id)
   }
 
   ngOnInit() { }
