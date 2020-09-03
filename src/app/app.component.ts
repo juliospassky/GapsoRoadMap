@@ -1,82 +1,64 @@
-import { Component } from '@angular/core';
-import { MenuItem } from 'primeng/api';
+import { Component, OnInit } from '@angular/core';
+import { MenuItem, Message, MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  host: { class: 'app-component-scss' }
+  host: { class: 'app-component-container' }
 })
-export class AppComponent {
-  items: MenuItem[];
-  display: boolean;
+export class AppComponent implements OnInit {
+  // menuTop: MenuItem[];
+  menuUser: MenuItem[];
 
-  inputSearch: string;  
+  displaySideBar: boolean;
+  menuSideBar: MenuItem[];
 
-  constructor(){
-    this.display = false;
+  inputSearch: string;
+
+  constructor(private messageService: MessageService){ }
+
+  ngOnInit(){
+    this.displaySideBar = false;
     this.inputSearch = "";
-    this.items = [
-      { label:'File', icon:'pi pi-fw pi-file', items: [
-        { label:'New', icon:'pi pi-fw pi-plus', items: [
-          { label:'Bookmark', icon:'pi pi-fw pi-bookmark' },
-          { label:'Video', icon:'pi pi-fw pi-video' },
-        ]},
-          { label:'Delete', icon:'pi pi-fw pi-trash' },
-          { separator: true },
-          { label:'Export', icon:'pi pi-fw pi-external-link' }
-        ]},
-          { label:'Edit', icon:'pi pi-fw pi-pencil', items:[
-          { label:'Left', icon:'pi pi-fw pi-align-left' },
-          { label:'Right', icon:'pi pi-fw pi-align-right' },
-          { label:'Center', icon:'pi pi-fw pi-align-center' },
-          { label:'Justify', icon:'pi pi-fw pi-align-justify' },
-        ]},
-          { label:'Users', icon:'pi pi-fw pi-user', items: [
-            { label:'New', icon:'pi pi-fw pi-user-plus' },
-            { label:'Delete', icon:'pi pi-fw pi-user-minus' },
-            { label:'Search', icon:'pi pi-fw pi-users', items: [
-              { label:'Filter', icon:'pi pi-fw pi-filter', items: [
-                { label:'Print', icon:'pi pi-fw pi-print' }
-              ]},
-                { icon:'pi pi-fw pi-bars', label:'List' }
-              ]}
-            ]
-          },
-          {
-          label:'Events',
-          icon:'pi pi-fw pi-calendar',
-          items:[
-              {
-                  label:'Edit',
-                  icon:'pi pi-fw pi-pencil',
-                  items:[
-                  {
-                      label:'Save',
-                      icon:'pi pi-fw pi-calendar-plus'
-                  },
-                  {
-                      label:'Delete',
-                      icon:'pi pi-fw pi-calendar-minus'
-                  },
-
-                  ]
-              },
-              {
-                  label:'Archieve',
-                  icon:'pi pi-fw pi-calendar-times',
-                  items:[
-                  {
-                      label:'Remove',
-                      icon:'pi pi-fw pi-calendar-minus'
-                  }
-                  ]
-              }
-          ]
-      },
-      {
-          label:'Quit',
-          icon:'pi pi-fw pi-power-off'
-      }
-  ];
+    // this.menuTop = [
+    //   { label:'Test', icon:'pi pi-fw pi-file', items: [
+    //     { label:'Test 0', icon:'pi pi-fw pi-plus', items: [
+    //       { label:'Test 1', icon:'pi pi-fw pi-bookmark' },
+    //       { label:'Test 2', icon:'pi pi-fw pi-video' },
+    //     ]},
+    //     { label:'Test 3', icon:'pi pi-fw pi-trash' },
+    //     { separator: true },
+    //     { label:'Test 4', icon:'pi pi-fw pi-external-link' }
+    //   ]}
+    // ];
+    this.menuUser = [
+      { label: 'Account', items: [
+        { label: 'Update', icon: 'pi pi-refresh', command: () => { this.update(); } },
+        { label: 'Delete', icon: 'pi pi-times', command: () => { this.delete(); } }
+      ]},
+      { label: 'Options', items: [
+        { label: 'Angular Website', icon: 'pi pi-external-link', url: 'http://angular.io' },
+        { label: 'Router', icon: 'pi pi-upload', routerLink: '/fileupload' },
+        { label: 'Quit', icon:'pi pi-power-off', command: () => { this.logout(); } }
+      ]},
+    ];
+    this.menuSideBar = [
+      { label:'T. I.', icon:'pi pi-fw pi-desktop', items:[
+        { label: 'Front-end', routerLink: '/roadMap/frontend', command: () => { this.setDisplaySideBar(); } },
+        { label: 'Back-end', routerLink: '/roadMap/backend', command: () => { this.setDisplaySideBar(); } },
+        { label: 'DevOps', routerLink: '/roadMap/devops', command: () => { this.setDisplaySideBar(); } }
+      ]},
+      { separator: true },
+      { label:'Optimization', icon:'pi pi-fw pi-globe', routerLink: '/roadMap/optimization', command: () => { this.setDisplaySideBar(); } },
+      { separator: true },
+      { label:'Data Science', icon:'pi pi-fw pi-cog', routerLink: '/roadMap/datascience', command: () => { this.setDisplaySideBar(); } }
+    ];
   }
+
+  setDisplaySideBar = () => { this.displaySideBar = this.displaySideBar ? false : true }
+
+  update = () => { this.messageService.add({severity:'success', key: 'success', summary:'Success', detail:'Data Updated'}); this.clear('success'); }
+  delete = () => { this.messageService.add({severity:'warn', key: 'warn', summary:'Delete', detail:'Data Deleted'}); this.clear('warn'); }
+  logout = () => { this.messageService.add({severity:'error', key: 'error', summary:'Logout', detail:'User Logged Out'}); this.clear('error'); }
+  clear = (key: string) => { setTimeout(() => { this.messageService.clear(key); }, 3000); }
 }

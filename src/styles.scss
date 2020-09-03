@@ -1,5 +1,30 @@
 body{
   margin: 0;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.p-button{
+  background: #bd00ff !important;
+  border: 1px solid #bd00ff !important;
+}
+
+.p-inputtext:enabled:focus{
+  box-shadow: 0 0 0 0.1rem #e6a5fd !important;
+  border-color: #bd00ff !important;
+}
+
+.p-sidebar-close{
+  border: 2px solid #bd00ff !important;
+  border-radius: 16px !important;
+}
+
+.p-tieredmenu .p-menuitem-link:focus{
+  box-shadow: inset 0 0 0 0.1rem #e6a5fd !important;
+}
+
+.p-badge{
+  background: #bd00ff !important;
 }
 
 @import './app/app.component.scss';
+@import './app/road-map/road-map.component.scss';

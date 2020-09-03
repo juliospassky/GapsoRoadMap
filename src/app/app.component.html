@@ -1,19 +1,45 @@
 <div class="main-menu">
-    <p-menubar [model]="items">
+    <div class="main-menu-left">
+        <p-button type="text" (click)="setDisplaySideBar()" icon="pi pi-bars"></p-button>
+        <img class="main-menu-logo" src="../assets/images/logo.PNG" alt="Accenture Logo">
+        <span class="main-menu-title">RoadMap</span>
+    </div>
+    <!-- <p-menubar [model]="menuTop" class="main-menu-bar">
         <div>
-            <p-button type="text" (click)="display = true" icon="pi pi-plus" label="Show"></p-button>
-            <span class="p-input-icon-left p-float-label">
+            <span class="p-input-icon-left">
                 <i class="pi pi-search"></i>
-                <input type="text" id="input-search" pInputText [(ngModel)]="inputSearch">    
-                <label for="input-search" for="float-input">Search</label>     
+                <input type="text" pInputText [(ngModel)]="inputSearch" placeholder="Search">     
             </span>
-            <button type="button" pButton label="Logout" icon="pi pi-power-off" style="margin-left:.25em"></button>
         </div>
-    </p-menubar>
+    </p-menubar> -->
+    <div class="main-menu-user">
+        <span class="p-input-icon-left">
+            <i class="pi pi-search"></i>
+            <input type="text" pInputText [(ngModel)]="inputSearch" placeholder="Search">     
+        </span>
+        <span class="p-overlay-badge p-ml-3 p-mr-2 main-menu-user-notification">
+            <i class="pi pi-bell main-menu-user-notification-icon"></i>
+            <span class="p-badge">2</span>
+        </span>
+        <img class="main-menu-user-img" src="../assets/images/user.png" alt="User Image" (click)="menu.toggle($event)">
+        <p-menu #menu [popup]="true" [model]="menuUser"></p-menu>
+    </div>
 </div>
 
-<p-sidebar [(visible)]="display">
-    Content
+<div class="message-service-box">
+    <p-messages enableService="true" key="success"></p-messages>
+    <p-messages enableService="true" key="warn"></p-messages>
+    <p-messages enableService="true" key="error"></p-messages>
+</div>
+
+<p-sidebar [(visible)]="displaySideBar">
+    <div class="sidebar-menu-title">
+        <img class="sidebar-menu-logo" src="../assets/images/logo.PNG" alt="Accenture Logo">
+        <span class="sidebar-menu-title">RoadMap</span>
+    </div>
+    <div class="sidebar-menu-button-box">
+        <p-tieredMenu [model]="menuSideBar"></p-tieredMenu>
+    </div>
 </p-sidebar>
 
 <router-outlet></router-outlet>
