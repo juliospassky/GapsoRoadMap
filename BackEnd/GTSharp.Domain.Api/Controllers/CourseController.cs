@@ -8,6 +8,8 @@ using GTSharp.Domain.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using GTSharp.Domain.Commands.Input.CreateCommand;
+using GTSharp.Domain.Infra.Contexts;
+using Microsoft.EntityFrameworkCore;
 
 namespace GTSharp.Domain.Api.Controllers
 {
@@ -25,16 +27,18 @@ namespace GTSharp.Domain.Api.Controllers
 
         [Route("{id:int}")]
         [HttpGet]
-        public Course GetById([FromServices] ICourseRepository repository, int id)
+        public Course GetById([FromServices] DataContext context, int id)
         {
-            return repository.GetById(id);
+            return context.Course.AsNoTracking().Where(o=> o.Id == id)
+                        .Include(o => o.Comments).FirstOrDefault();
         }
 
         [Route("")]
         [HttpGet]
-        public IEnumerable<Course> Get([FromServices] ICourseRepository repository)
+        public IEnumerable<Course> Get([FromServices] DataContext context)
         {
-            return repository.GetAll();
+            return context.Course.AsNoTracking()
+                        .Include(o => o.Comments);
         }
     }
 }

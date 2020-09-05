@@ -27,9 +27,16 @@ namespace GTSharp.Domain.Api.Controllers
 
         [Route("{id:int}")]
         [HttpGet]
-        public RoadMap GetById([FromServices] IRoadMapRepository repository, int id)
+        public RoadMap GetById([FromServices] DataContext context, int id)
         {
-            return repository.GetById(id);
+            return context.RoadMap.AsNoTracking().Where(o => o.Id == id)
+                        .Include(o => o.Nodes)
+                            .ThenInclude(o => o.Subtitles)
+                        .Include(o => o.Nodes)
+                            .ThenInclude(o => o.Courses)
+                                .ThenInclude(o=> o.Comments)
+                        .Include(o => o.Nodes)
+                            .ThenInclude(o => o.Recomendations).FirstOrDefault();
         }
 
         [Route("")]

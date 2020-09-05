@@ -27,9 +27,13 @@ namespace GTSharp.Domain.Api.Controllers
 
         [Route("{id:int}")]
         [HttpGet]
-        public Node GetById([FromServices] INodeRepository repository, int id)
+        public Node GetById([FromServices] DataContext context, int id)
         {
-            return repository.GetById(id);
+            return context.Node.AsNoTracking().Where(o => o.Id == id)
+                        .Include(o => o.Subtitles)
+                        .Include(o => o.Recomendations)
+                        .Include(o => o.Courses)
+                            .ThenInclude(o => o.Comments).FirstOrDefault();
         }
 
         [Route("")]
