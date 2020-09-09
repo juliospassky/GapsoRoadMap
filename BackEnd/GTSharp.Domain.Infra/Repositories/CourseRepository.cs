@@ -33,5 +33,17 @@ namespace GTSharp.Domain.Infra.Repositories
             _context.Course.Add(Course);
             _context.SaveChanges();
         }
+
+        public void Update(Course Course)
+        {
+            _context.Course.Update(Course);
+            _context.SaveChanges();
+        }
+
+        public void Delete(Course Course)
+        {
+            _context.Course.Remove(Course);
+            _context.SaveChanges();
+        }
     }
 }

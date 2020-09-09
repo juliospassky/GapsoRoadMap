@@ -26,6 +26,20 @@ namespace GTSharp.Domain.Api.Controllers
             return (GenericCommandResult)handler.Handle(command);
         }
 
+        [Route("")]
+        [HttpPut]
+        public GenericCommandResult Update([FromBody] UpdateUserCommand command, [FromServices] UserHandler handler)
+        {
+            return (GenericCommandResult)handler.Handle(command);
+        }
+
+        [Route("")]
+        [HttpDelete]
+        public GenericCommandResult Delete([FromBody] DeleteUserCommand command, [FromServices] UserHandler handler)
+        {
+            return (GenericCommandResult)handler.Handle(command);
+        }
+
         [Route("{id:int}")]
         [HttpGet]
         public User GetById([FromServices] IUserRepository repository, int id)

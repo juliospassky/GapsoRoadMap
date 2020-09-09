@@ -10,7 +10,9 @@ namespace GTSharp.Domain.Entities
 {
     public class UserHandler :
     Notifiable,
-    IHandler<CreateUserCommand>
+    IHandler<CreateUserCommand>,
+    IHandler<UpdateUserCommand>,
+    IHandler<DeleteUserCommand>
     {
         private readonly IUserRepository _repository;
 
@@ -36,5 +38,26 @@ namespace GTSharp.Domain.Entities
             return new GenericCommandResult(true, Messages.Act_Save, User);
         }
 
+        public ICommandResult Handle(UpdateUserCommand command)
+        {
+            //Fail Fast Validation
+            command.Validate();
+            if (command.Invalid)
+                return new GenericCommandResult(false, Messages.Ex_ExceptionGeneric, command.Notifications);
+
+            var user = _repository.GetById(command.Id);
+
+            user.UpdateUser(command.Email, command.Name, command.Picture, command.NickName,
+            command.Avatar, command.Country);
+
+            _repository.Update(user);
+            
+            return new GenericCommandResult(true, Messages.Act_Update, user);
+        }
+
+        public ICommandResult Handle(DeleteUserCommand command)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

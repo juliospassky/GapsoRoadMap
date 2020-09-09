@@ -33,5 +33,17 @@ namespace GTSharp.Domain.Infra.Repositories
             _context.Recomendation.Add(Recomendation);
             _context.SaveChanges();
         }
+        
+        public void Update(Recomendation Recomendation)
+        {
+            _context.Recomendation.Update(Recomendation);
+            _context.SaveChanges();
+        }
+
+        public void Delete(Recomendation Recomendation)
+        {
+            _context.Recomendation.Remove(Recomendation);
+            _context.SaveChanges();
+        }
     }
 }

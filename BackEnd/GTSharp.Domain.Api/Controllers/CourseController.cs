@@ -25,11 +25,25 @@ namespace GTSharp.Domain.Api.Controllers
             return (GenericCommandResult)handler.Handle(command);
         }
 
+        [Route("")]
+        [HttpPut]
+        public GenericCommandResult Update([FromBody] UpdateCourseCommand command, [FromServices] CourseHandler handler)
+        {
+            return (GenericCommandResult)handler.Handle(command);
+        }
+
+        [Route("")]
+        [HttpDelete]
+        public GenericCommandResult Delete([FromBody] DeleteCourseCommand command, [FromServices] CourseHandler handler)
+        {
+            return (GenericCommandResult)handler.Handle(command);
+        }
+
         [Route("{id:int}")]
         [HttpGet]
         public Course GetById([FromServices] DataContext context, int id)
         {
-            return context.Course.AsNoTracking().Where(o=> o.Id == id)
+            return context.Course.AsNoTracking().Where(o => o.Id == id)
                         .Include(o => o.Comments).FirstOrDefault();
         }
 

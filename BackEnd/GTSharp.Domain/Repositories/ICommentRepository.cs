@@ -9,5 +9,7 @@ namespace GTSharp.Domain.Repositories
         Comment GetById(int id);
         IEnumerable<Comment> GetAll();
         void Create(Comment comment);
+        void Update(Comment comment);
+        void Delete(Comment comment);
     }
 }

@@ -23,6 +23,20 @@ namespace GTSharp.Domain.Api.Controllers
             return (GenericCommandResult)handler.Handle(command);
         }
 
+        [Route("")]
+        [HttpPut]
+        public GenericCommandResult Update([FromBody] UpdateRecomendationCommand command, [FromServices] RecomendationHandler handler)
+        {
+            return (GenericCommandResult)handler.Handle(command);
+        }
+
+        [Route("")]
+        [HttpDelete]
+        public GenericCommandResult Delete([FromBody] DeleteRecomendationCommand command, [FromServices] RecomendationHandler handler)
+        {
+            return (GenericCommandResult)handler.Handle(command);
+        }
+
         [Route("{id:int}")]
         [HttpGet]
         public Recomendation GetById([FromServices] IRecomendationRepository repository, int id)

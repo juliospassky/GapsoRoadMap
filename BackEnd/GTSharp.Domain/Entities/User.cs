@@ -33,5 +33,15 @@ namespace GTSharp.Domain.Entities
             Avatar = avatar;
             Country = country;
         }
+
+        public void UpdateUser(string email, string name, string picture, string nickName, string avatar, string country)
+        {
+            Email = email;
+            Name = name;
+            Picture = picture;
+            NickName = nickName;
+            Avatar = avatar;
+            Country = country;
+        }
     }
 }

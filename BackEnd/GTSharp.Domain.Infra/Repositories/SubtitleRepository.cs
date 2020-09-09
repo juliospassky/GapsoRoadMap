@@ -31,5 +31,17 @@ namespace GTSharp.Domain.Infra.Repositories
             _context.Subtitle.Add(Subtitle);
             _context.SaveChanges();
         }
+        
+        public void Update(Subtitle Subtitle)
+        {
+            _context.Subtitle.Update(Subtitle);
+            _context.SaveChanges();
+        }
+
+        public void Delete(Subtitle Subtitle)
+        {
+            _context.Subtitle.Remove(Subtitle);
+            _context.SaveChanges();
+        }
     }
 }

@@ -75,7 +75,7 @@ namespace GTSharp.Domain.Api
 
             //Documentação da API
             services.AddSwaggerGen(o =>
-                o.SwaggerDoc("v1", new OpenApiInfo { Title = "LeaderBord Api", Version = "v1" }));
+                o.SwaggerDoc("v1", new OpenApiInfo { Title = "Gapso RoadMap Api", Version = "v1" }));
 
         }
 

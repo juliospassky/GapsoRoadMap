@@ -8,6 +8,8 @@ namespace GTSharp.Domain.Repositories
     {
         Recomendation GetById(int id);
         IEnumerable<Recomendation> GetAll();
-        void Create(Recomendation Recomendation);
+        void Create(Recomendation recomendation);
+        void Update(Recomendation recomendation);
+        void Delete(Recomendation recomendation);
     }
 }

@@ -8,6 +8,8 @@ namespace GTSharp.Domain.Repositories
     {
         Subtitle GetById(int id);
         IEnumerable<Subtitle> GetAll();
-        void Create(Subtitle Subtitle);
+        void Create(Subtitle subtitle);
+        void Update(Subtitle subtitle);
+        void Delete(Subtitle subtitle);
     }
 }

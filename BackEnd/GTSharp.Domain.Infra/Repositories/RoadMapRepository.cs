@@ -31,5 +31,17 @@ namespace GTSharp.Domain.Infra.Repositories
             _context.RoadMap.Add(RoadMap);
             _context.SaveChanges();
         }
+        
+        public void Update(RoadMap RoadMap)
+        {
+            _context.RoadMap.Update(RoadMap);
+            _context.SaveChanges();
+        }
+
+        public void Delete(RoadMap RoadMap)
+        {
+            _context.RoadMap.Remove(RoadMap);
+            _context.SaveChanges();
+        }
     }
 }

@@ -9,5 +9,7 @@ namespace GTSharp.Domain.Repositories
         RoadMap GetById(int id);
         IEnumerable<RoadMap> GetAll();
         void Create(RoadMap roadMap);
+        void Update(RoadMap roadMap);
+        void Delete(RoadMap roadMap);
     }
 }

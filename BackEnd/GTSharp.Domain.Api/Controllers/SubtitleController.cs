@@ -23,6 +23,20 @@ namespace GTSharp.Domain.Api.Controllers
             return (GenericCommandResult)handler.Handle(command);
         }
 
+        [Route("")]
+        [HttpPut]
+        public GenericCommandResult Update([FromBody] UpdateSubtitleCommand command, [FromServices] SubtitleHandler handler)
+        {
+            return (GenericCommandResult)handler.Handle(command);
+        }
+
+        [Route("")]
+        [HttpDelete]
+        public GenericCommandResult Delete([FromBody] DeleteSubtitleCommand command, [FromServices] SubtitleHandler handler)
+        {
+            return (GenericCommandResult)handler.Handle(command);
+        }
+
         [Route("{id:int}")]
         [HttpGet]
         public Subtitle GetById([FromServices] ISubtitleRepository repository, int id)

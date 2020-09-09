@@ -23,6 +23,20 @@ namespace GTSharp.Domain.Api.Controllers
             return (GenericCommandResult)handler.Handle(command);
         }
 
+        [Route("")]
+        [HttpPut]
+        public GenericCommandResult Update([FromBody] UpdateCommentCommand command, [FromServices] CommentHandler handler)
+        {
+            return (GenericCommandResult)handler.Handle(command);
+        }
+
+        [Route("")]
+        [HttpDelete]
+        public GenericCommandResult Delete([FromBody] DeleteCommentCommand command, [FromServices] CommentHandler handler)
+        {
+            return (GenericCommandResult)handler.Handle(command);
+        }
+
         [Route("{id:int}")]
         [HttpGet]
         public Comment GetById([FromServices] ICommentRepository repository, int id)

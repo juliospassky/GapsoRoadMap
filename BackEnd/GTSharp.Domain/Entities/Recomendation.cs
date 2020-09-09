@@ -47,5 +47,15 @@ namespace GTSharp.Domain.Entities
             CreateAt = DateTime.Now;
             UpdateAt = DateTime.Now;
         }
+        
+        public void UpdateRecomendation(string title, string url, decimal? value, string recomendedByEid, bool isApproved)
+        {
+            Title = title;
+            Url = url;
+            Value = value;
+            RecomendedByEid = recomendedByEid;
+            IsApproved = isApproved;
+            UpdateAt = DateTime.Now;
+        }
     }
 }

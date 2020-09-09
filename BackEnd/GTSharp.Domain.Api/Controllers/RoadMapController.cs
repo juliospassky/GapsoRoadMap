@@ -25,6 +25,20 @@ namespace GTSharp.Domain.Api.Controllers
             return (GenericCommandResult)handler.Handle(command);
         }
 
+        [Route("")]
+        [HttpPut]
+        public GenericCommandResult Update([FromBody] UpdateRoadMapCommand command, [FromServices] RoadMapHandler handler)
+        {
+            return (GenericCommandResult)handler.Handle(command);
+        }
+
+        [Route("")]
+        [HttpDelete]
+        public GenericCommandResult Delete([FromBody] DeleteRoadMapCommand command, [FromServices] RoadMapHandler handler)
+        {
+            return (GenericCommandResult)handler.Handle(command);
+        }
+
         [Route("{id:int}")]
         [HttpGet]
         public RoadMap GetById([FromServices] DataContext context, int id)
@@ -34,7 +48,7 @@ namespace GTSharp.Domain.Api.Controllers
                             .ThenInclude(o => o.Subtitles)
                         .Include(o => o.Nodes)
                             .ThenInclude(o => o.Courses)
-                                .ThenInclude(o=> o.Comments)
+                                .ThenInclude(o => o.Comments)
                         .Include(o => o.Nodes)
                             .ThenInclude(o => o.Recomendations).FirstOrDefault();
         }
@@ -48,7 +62,7 @@ namespace GTSharp.Domain.Api.Controllers
                             .ThenInclude(o => o.Subtitles)
                         .Include(o => o.Nodes)
                             .ThenInclude(o => o.Courses)
-                                .ThenInclude(o=> o.Comments)
+                                .ThenInclude(o => o.Comments)
                         .Include(o => o.Nodes)
                             .ThenInclude(o => o.Recomendations);
         }

@@ -9,5 +9,7 @@ namespace GTSharp.Domain.Repositories
         Course GetById(int id);
         IEnumerable<Course> GetAll();
         void Create(Course course);
+        void Update(Course course);
+        void Delete(Course course);
     }
 }

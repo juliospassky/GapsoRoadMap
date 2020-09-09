@@ -5,12 +5,15 @@ using GTSharp.Domain.Commands.Output;
 using GTSharp.Domain.Handlers.Contract;
 using GTSharp.Domain.Repositories;
 using GTSharp.Domain.Resources;
+using GTSharp.Domain.Utils;
 
 namespace GTSharp.Domain.Entities
 {
     public class CommentHandler :
     Notifiable,
-    IHandler<CreateCommentCommand>
+    IHandler<CreateCommentCommand>,
+    IHandler<UpdateCommentCommand>,
+    IHandler<DeleteCommentCommand>
     {
         private readonly ICommentRepository _repository;
 
@@ -35,5 +38,37 @@ namespace GTSharp.Domain.Entities
             return new GenericCommandResult(true, Messages.Act_Save, Comment);
         }
 
+        public ICommandResult Handle(UpdateCommentCommand command)
+        {
+            //Fail Fast Validation
+            command.Validate();
+            if (command.Invalid)
+                return new GenericCommandResult(false, Messages.Ex_ExceptionGeneric, command.Notifications);
+
+            var comment = _repository.GetById(command.Id);
+
+            comment.UpdateTitle(command.Title);
+
+            _repository.Update(comment);
+            
+            return new GenericCommandResult(true, Messages.Act_Update, comment);
+        }
+
+        public ICommandResult Handle(DeleteCommentCommand command)
+        {
+            //Fail Fast Validation
+            command.Validate();
+            if (command.Invalid)
+                return new GenericCommandResult(false, Messages.Ex_ExceptionGeneric, command.Notifications);
+
+            var comment = _repository.GetById(command.Id);
+            
+            if(comment == null)
+                return new GenericCommandResult(false, Messages.Ex_ItemNotFound.ToFormat(command.Id.ToString() ?? ""), command.Notifications);
+
+            _repository.Delete(comment);
+            
+            return new GenericCommandResult(true, Messages.Act_Deleted, comment);            
+        }
     }
 }

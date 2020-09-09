@@ -11,20 +11,26 @@ namespace GTSharp.Domain.Entities
         [MinLength(2)]
         [MaxLength(128)]
         public string Title { get; private set; }
-        
+
         public List<Node> Nodes { get; set; }
 
         public DateTime? CreateAt { get; private set; }
 
         public DateTime? UpdateAt { get; private set; }
 
-        public RoadMap(){}
-        
+        public RoadMap() { }
+
         public RoadMap(string title)
         {
             Title = title;
             Nodes = new List<Node>();
             CreateAt = DateTime.Now;
+            UpdateAt = DateTime.Now;
+        }
+
+        public void UpdateRoadMap(string title)
+        {
+            Title = title;
             UpdateAt = DateTime.Now;
         }
     }

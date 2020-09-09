@@ -9,5 +9,7 @@ namespace GTSharp.Domain.Repositories
         User GetById(int id);
         IEnumerable<User> GetAll();
         void Create(User user);
+        void Update(User User);
+        void Delete(User User);
     }
 }

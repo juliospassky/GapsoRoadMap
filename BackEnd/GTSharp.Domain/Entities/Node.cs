@@ -37,5 +37,11 @@ namespace GTSharp.Domain.Entities
             CreateAt = DateTime.Now;
             UpdateAt = DateTime.Now;
         }
+
+        public void UpdateNode(string title)
+        {
+            Title = title;
+            UpdateAt = DateTime.Now;
+        }
     }
 }

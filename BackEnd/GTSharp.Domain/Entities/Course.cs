@@ -50,5 +50,15 @@ namespace GTSharp.Domain.Entities
             CreateAt = DateTime.Now;
             UpdateAt = DateTime.Now;
         }
+        
+        public void UpdateCourse(string title, string url, decimal value, decimal stars, string recomendedByEid)
+        {
+            Title = title;
+            Url = url;
+            Value = value;
+            Stars = stars;
+            RecomendedByEid = recomendedByEid;
+            UpdateAt = DateTime.Now;
+        }
     }
 }
