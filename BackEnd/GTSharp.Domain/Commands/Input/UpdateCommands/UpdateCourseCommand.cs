@@ -10,7 +10,7 @@ namespace GTSharp.Domain.Commands.Input.CreateCommand
 {
     public class UpdateCourseCommand : Notifiable, ICommand
     {
-        public int Id { get; private set; }
+        public int Id { get; set; }
         public string Title { get; set; }
         public string Url { get; set; }
         public Decimal Value { get; set; }

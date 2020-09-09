@@ -24,6 +24,8 @@ namespace GTSharp.Domain.Commands.Input.CreateCommand
             .Requires()
 
             .IsBetween(Title.Length0IfNullOrEmpty(), 2, 1024, "Title", Messages.V_IsBetween.ToFormat("Title", "2", "1024"))
+
+            .IsNotNull(Id, "Id", Messages.V_IsNotNullOrEmpty.ToFormat("Id"))
             );
         }
     }

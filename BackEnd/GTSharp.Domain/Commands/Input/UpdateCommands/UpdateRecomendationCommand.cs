@@ -8,12 +8,12 @@ namespace GTSharp.Domain.Commands.Input.CreateCommand
 {
     public class UpdateRecomendationCommand : Notifiable, ICommand
     {
-        public int Id { get; private set; }
+        public int Id { get;  set; }
         public string Title { get; set; }
         public string Url { get; set; }
         public Decimal? Value { get; set; }
         public string RecomendedByEid { get; set; }
-        public bool IsApproved { get; private set; }
+        public bool IsApproved { get;  set; }
 
         public UpdateRecomendationCommand(int id, string title, string url, decimal? value, string recomendedByEid, bool isApproved)
         {

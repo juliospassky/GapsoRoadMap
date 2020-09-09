@@ -8,7 +8,7 @@ namespace GTSharp.Domain.Commands.Input.CreateCommand
 {
     public class UpdateRoadMapCommand : Notifiable, ICommand
     {
-        public int Id { get; private set; }
+        public int Id { get; set; }
         public string Title { get; set; }
 
         public UpdateRoadMapCommand(int id, string title)

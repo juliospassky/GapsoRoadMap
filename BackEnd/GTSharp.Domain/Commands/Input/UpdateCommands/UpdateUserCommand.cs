@@ -8,7 +8,7 @@ namespace GTSharp.Domain.Commands.Input.CreateCommand
 {
     public class UpdateUserCommand : Notifiable, ICommand
     {
-        public int Id { get; private set; }
+        public int Id { get; set; }
         public string Email { get; set; }
         public string Name { get; set; }
         public string Picture { get; set; }

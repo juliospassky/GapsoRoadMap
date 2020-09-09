@@ -8,7 +8,7 @@ namespace GTSharp.Domain.Commands.Input.CreateCommand
 {
     public class UpdateSubtitleCommand : Notifiable, ICommand
     {
-        public int Id { get; private set; }
+        public int Id { get; set; }
         public string Title { get; set; }
 
         public UpdateSubtitleCommand(int id, string title, int nodeId)
