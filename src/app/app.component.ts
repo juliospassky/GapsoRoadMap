@@ -7,7 +7,6 @@ import { MenuItem, Message, MessageService } from 'primeng/api';
   host: { class: 'app-component-container' }
 })
 export class AppComponent implements OnInit {
-  // menuTop: MenuItem[];
   menuUser: MenuItem[];
 
   displaySideBar: boolean;
@@ -20,17 +19,6 @@ export class AppComponent implements OnInit {
   ngOnInit(){
     this.displaySideBar = false;
     this.inputSearch = "";
-    // this.menuTop = [
-    //   { label:'Test', icon:'pi pi-fw pi-file', items: [
-    //     { label:'Test 0', icon:'pi pi-fw pi-plus', items: [
-    //       { label:'Test 1', icon:'pi pi-fw pi-bookmark' },
-    //       { label:'Test 2', icon:'pi pi-fw pi-video' },
-    //     ]},
-    //     { label:'Test 3', icon:'pi pi-fw pi-trash' },
-    //     { separator: true },
-    //     { label:'Test 4', icon:'pi pi-fw pi-external-link' }
-    //   ]}
-    // ];
     this.menuUser = [
       { label: 'Account', items: [
         { label: 'Update', icon: 'pi pi-refresh', command: () => { this.update(); } },
@@ -49,9 +37,9 @@ export class AppComponent implements OnInit {
         { label: 'DevOps', routerLink: '/roadmap/devops', command: () => { this.setDisplaySideBar(); } }
       ]},
       { separator: true },
-      { label:'Optimization', icon:'pi pi-fw pi-globe', routerLink: '/roadmap/optimization', command: () => { this.setDisplaySideBar(); } },
+      { label:'Optimization', icon:'pi pi-fw pi-cog', routerLink: '/roadmap/optimization', command: () => { this.setDisplaySideBar(); } },
       { separator: true },
-      { label:'Data Science', icon:'pi pi-fw pi-cog', routerLink: '/roadmap/datascience', command: () => { this.setDisplaySideBar(); } }
+      { label:'Data Science', icon:'pi pi-fw pi-chart-bar', routerLink: '/roadmap/datascience', command: () => { this.setDisplaySideBar(); } }
     ];
   }
 

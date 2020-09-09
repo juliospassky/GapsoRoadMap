@@ -1,94 +1,59 @@
 .app-component-container{  
   .main-menu{
-    display: flex;
-    flex-direction: row;
-    flex: 1;
-    border-bottom: 1px solid #bd00ff;
-    flex-wrap: wrap;
+    border-bottom: 1px solid $color_primary;
 
-    .main-menu-left{
-      display: flex;
-      flex-direction: row;
-      padding: 8px;
-      flex-wrap: wrap;
+    .main-menu-logo{
+      height: 36px;
+      width: 132px;
+    }
 
-      .main-menu-logo{
-        margin-left: 16px;
-      }
-
-      .main-menu-title{
-        font-size: 1.8em;
-        align-self: flex-end;
-        margin-left: 4px;
-      }
-
-      .main-menu-logo{
-        height: 36px;
-      }
+    .main-menu-title{
+      font-size: 1.8em;
     }
 
     .main-menu-bar{
       width: 100%;
 
       .p-menubar{
-        background: #fff;
-        border: 0;
+        background: $color_white;
+        border: 0 !important;
       }
     }
 
-    .main-menu-user{
-      display: flex;
-      flex-direction: row;
-      padding: 8px 16px 8px 8px;
-      margin-left: auto;
-      flex-wrap: wrap;
-
-      .main-menu-user-img{
-        height: 36px;
-        margin-left: 16px;
-      }
-
-      .main-menu-user-notification{
-        align-self: flex-end;
-
-        .main-menu-user-notification-icon{
-          font-size: 1.5em;
-        }
-      }
+    .main-menu-user-img{
+      cursor: pointer;
+      height: 36px;
+      width: 36px;
+    }
+    
+    .main-menu-user-notification-icon{
+      font-size: 1.5em;
     }
   }
 
-  .sidebar-menu-title{
-    display: flex;
-    flex-direction: column;
-    border-bottom: 1px solid #bd00ff;
-    padding-bottom: 8px;
-    flex-wrap: wrap;
+  .sidebar-menu-header{
+    border-bottom: 1px solid $color_primary;
     
     .sidebar-menu-title{
-      font-size: 2.2em;
-      align-self: flex-end;
-      margin-left: 4px;
+      font-size: 2em;
+      border-bottom: 1px solid $color_primary;
     }
 
     .sidebar-menu-logo{
-      width: 75%;
+      width: 85%;
     }
   }
 
-  .sidebar-menu-button-box{
-    margin: 12px 0;
-
+  .sidebar-menu-width{
     .ng-trigger{
-      width: 100% !important;
+      width: auto !important;
       border: 0 !important;
     }
   }
 
   .message-service-box{
     bottom: 0;
-    right: 0;
+    right: 16px;
     position: absolute;
-    margin-right: 16px;
   }
 }

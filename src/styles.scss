@@ -1,29 +1,65 @@
+$color_primary: #BD00FF;
+$color_primary_light: #E6A5FD;
+$color_second: #177E89;
+$color_second_light: #21B0C0;
+$color_third: "";
+
+$color_white: #ffffff;
+
 body{
   margin: 0;
   font-family: "Courier New", Courier, monospace;
 }
 
 .p-button{
-  background: #bd00ff !important;
-  border: 1px solid #bd00ff !important;
+  background: $color_primary !important;
+  border: 1px solid $color_primary !important;
 }
 
 .p-inputtext:enabled:focus{
-  box-shadow: 0 0 0 0.1rem #e6a5fd !important;
-  border-color: #bd00ff !important;
+  box-shadow: 0 0 0 0.1rem $color_primary_light !important;
+  border-color: $color_primary !important;
 }
 
 .p-sidebar-close{
-  border: 2px solid #bd00ff !important;
+  border: 2px solid $color_primary !important;
   border-radius: 16px !important;
 }
 
 .p-tieredmenu .p-menuitem-link:focus{
-  box-shadow: inset 0 0 0 0.1rem #e6a5fd !important;
+  box-shadow: inset 0 0 0 0.1rem $color_primary_light !important;
 }
 
 .p-badge{
-  background: #bd00ff !important;
+  background: $color_primary !important;
+}
+
+.tabview-custom{ 
+  i, span{ 
+    vertical-align: middle; 
+  }
+  span{ 
+    margin: 0 .5rem;
+  }
+}
+
+.p-button { 
+  margin-right: .25rem;
+}
+
+.p-tabview .p-tabview-nav li .p-tabview-nav-link:not(.p-disabled):focus{
+  box-shadow: 0 0 0 0.1rem $color_primary_light !important;
+}
+
+.p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link{
+  background: $color_white !important;
+  border-color: $color_primary_light !important;
+  color: $color_primary !important;
+}
+
+.p-tabview p { 
+  line-height: 1.5;
+  margin: 0;
 }
 
 @import './app/app.component.scss';

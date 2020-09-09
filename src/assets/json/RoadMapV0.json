@@ -1,0 +1,154 @@
+[
+    {
+        "title": "FrontEnd",
+        "nodes": [
+            {
+                "title": "Internet",
+                "subtitles": [
+                    {
+                        "title": "How does the internet work?",
+                        "nodeId": 1,
+                        "createAt": "2020-09-05T06:40:29.7207088",
+                        "updateAt": "2020-09-05T06:40:29.7207722",
+                        "id": 1
+                    },
+                    {
+                        "title": "What is HTTP?",
+                        "nodeId": 1,
+                        "createAt": "2020-09-05T06:41:03.7257404",
+                        "updateAt": "2020-09-05T06:41:03.7257515",
+                        "id": 2
+                    },
+                    {
+                        "title": "Browsers and how they work?",
+                        "nodeId": 1,
+                        "createAt": "2020-09-05T06:41:35.8862598",
+                        "updateAt": "2020-09-05T06:41:35.8862699",
+                        "id": 3
+                    }
+                ],
+                "courses": [
+                    {
+                        "title": "Rede de Computadores e Internet",
+                        "url": "https://www.udemy.com/course/rede-de-computadores-e-internet/",
+                        "value": 35.9,
+                        "stars": 4.0,
+                        "recomendedByEid": "julio.cesar.oliveira",
+                        "comments": [
+                            {
+                                "title": "O curso foi bom",
+                                "eid": "julio.cesar.oliveira",
+                                "courseId": 1,
+                                "createAt": "2020-09-05T06:55:55.5518001",
+                                "updateAt": "2020-09-05T06:55:55.5518868",
+                                "id": 1
+                            },
+                            {
+                                "title": "O curso agregou",
+                                "eid": "julio.cesar.oliveira",
+                                "courseId": 1,
+                                "createAt": "2020-09-05T06:56:11.3704758",
+                                "updateAt": "2020-09-05T06:56:11.3705263",
+                                "id": 2
+                            }
+                        ],
+                        "nodeId": 1,
+                        "createAt": "2020-09-05T06:43:57.7629231",
+                        "updateAt": "2020-09-05T06:43:57.7630112",
+                        "id": 1
+                    },
+                    {
+                        "title": "Introdução à Lógica de Programação com Portugol Studio",
+                        "url": "https://www.udemy.com/course/introducao-a-logica-de-programacao-com-portugol-studio/",
+                        "value": 37.9,
+                        "stars": 5.0,
+                        "recomendedByEid": "julio.cesar.oliveira",
+                        "comments": [],
+                        "nodeId": 1,
+                        "createAt": "2020-09-05T06:46:00.0944536",
+                        "updateAt": "2020-09-05T06:46:00.0944649",
+                        "id": 2
+                    }
+                ],
+                "recomendations": [
+                    {
+                        "title": "HTML & CSS - Certification Course for Beginners",
+                        "url": "https://www.udemy.com/course/html-css-certification-course-for-beginners/",
+                        "value": 37.9,
+                        "recomendedByEid": "julio.cesar.oliveira",
+                        "isApproved": false,
+                        "nodeId": 1,
+                        "createAt": "2020-09-05T06:48:39.3052504",
+                        "updateAt": "2020-09-05T06:48:39.3054116",
+                        "id": 1
+                    }
+                ],
+                "roadMapId": 1,
+                "createAt": "2020-09-05T06:31:28.5918939",
+                "updateAt": "2020-09-05T06:31:28.5919972",
+                "id": 1
+            },
+            {
+                "title": "HTML",
+                "subtitles": [],
+                "courses": [],
+                "recomendations": [],
+                "roadMapId": 1,
+                "createAt": "2020-09-05T06:31:44.2809957",
+                "updateAt": "2020-09-05T06:31:44.2810059",
+                "id": 2
+            },
+            {
+                "title": "CSS",
+                "subtitles": [],
+                "courses": [],
+                "recomendations": [],
+                "roadMapId": 1,
+                "createAt": "2020-09-05T06:31:55.2485328",
+                "updateAt": "2020-09-05T06:31:55.2485417",
+                "id": 3
+            },
+            {
+                "title": "JavaScript",
+                "subtitles": [],
+                "courses": [],
+                "recomendations": [],
+                "roadMapId": 1,
+                "createAt": "2020-09-05T06:32:07.0738915",
+                "updateAt": "2020-09-05T06:32:07.0739003",
+                "id": 4
+            }
+        ],
+        "createAt": "2020-09-05T06:29:42.0175458",
+        "updateAt": "2020-09-05T06:29:42.0176662",
+        "id": 1
+    },
+    {
+        "title": "BackEnd",
+        "nodes": [],
+        "createAt": "2020-09-05T06:29:53.7770428",
+        "updateAt": "2020-09-05T06:29:53.777054",
+        "id": 2
+    },
+    {
+        "title": "DevOps",
+        "nodes": [],
+        "createAt": "2020-09-05T06:30:06.3932612",
+        "updateAt": "2020-09-05T06:30:06.3932686",
+        "id": 3
+    },
+    {
+        "title": "Optimization",
+        "nodes": [],
+        "createAt": "2020-09-05T06:30:16.3092441",
+        "updateAt": "2020-09-05T06:30:16.3092517",
+        "id": 4
+    },
+    {
+        "title": "Data Science",
+        "nodes": [],
+        "createAt": "2020-09-05T06:30:28.0171631",
+        "updateAt": "2020-09-05T06:30:28.0171732",
+        "id": 5
+    }
+]
